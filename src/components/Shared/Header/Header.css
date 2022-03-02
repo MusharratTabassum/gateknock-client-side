@@ -1,0 +1,19 @@
+.header-link {
+    list-style: none;
+    margin-right: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .items:hover {
+    color: red;
+  }
+  .red{
+    color: red;
+  }
+  .logos{
+    color: red;
+    font-weight: bolder;
+ }

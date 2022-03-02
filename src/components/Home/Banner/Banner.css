@@ -1,0 +1,61 @@
+.bg-image {
+     background-position: center top;
+     background-repeat: no-repeat; 
+     background-size: cover;
+}
+.banner-section.bg-image {
+    background-size: 100% auto;
+}
+.banner-section {
+    width: 100%;
+    height: auto;
+}
+.banner-bg-one {
+    background-image: url('./background.jpg');
+    height: 550px;
+}
+
+.banner-content-wrapper{
+    margin-top: 110px;
+}
+.banner-content h1 {
+    font-size: 24px;
+    color: #293A4E;
+    line-height: 32px;
+    margin: 0 0 14px 0;
+    text-transform: none;
+}
+.banner-content h2 {
+    font-size: 55px;
+    color: #262626;
+    line-height: 65px;
+    margin: 0 0 14px 0;
+    text-transform: none;
+}
+
+@media only screen and (max-width: 767px){
+    .banner-section.bg-image {
+        background-position: right 100%;
+        background-size: 550px;
+        
+    }
+    .banner-content{
+        padding-top: 50%;
+    }
+   
+    .banner-content h2{
+        font-size: 20px;
+        color: #262626;
+    line-height: 65px;
+    margin: 0 0 14px 0;
+    text-transform: none;
+
+    }
+}
+@media only screen and (max-width: 991px){    
+.banner-section.bg-image {
+    background-size: cover;
+}
+
+
+}
