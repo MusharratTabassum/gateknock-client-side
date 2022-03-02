@@ -15,7 +15,7 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
-                            className="my-2 mx-2 my-lg-0 ms-auto "
+                            className="my-2 mx-2 my-lg-0 me-auto "
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
@@ -48,7 +48,7 @@ const Header = () => {
                                     <Nav.Link as={Link} to="/">Hello! {user.displayName}</Nav.Link> : ''
                                 }
                             </Nav.Link>
-                            <Nav.Link className='header-link' >
+                            <Nav.Link className='header-link ms-auto' >
                                 {user?.email ?
                                     <Button className='p-0 logout-btn ' onClick={logOut} variant="light">Logout</Button> :
                                     <Nav.Link className='header-link' as={Link} to="/login">Login</Nav.Link>
