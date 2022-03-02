@@ -20,16 +20,24 @@
 }
 .banner-content h1 {
     font-size: 24px;
-    color: #293A4E;
+    color: black;
     line-height: 32px;
     margin: 0 0 14px 0;
     text-transform: none;
 }
 .banner-content h2 {
     font-size: 55px;
-    color: #262626;
+    color: black;
     line-height: 65px;
     margin: 0 0 14px 0;
+    text-transform: none;
+}
+.banner-content p {
+    font-size: 20px;
+    color: black;
+    letter-spacing: 0;
+    line-height: 30px;
+    margin: 0 0 95px 0;
     text-transform: none;
 }
 
@@ -45,7 +53,7 @@
    
     .banner-content h2{
         font-size: 20px;
-        color: #262626;
+        color: black;
     line-height: 65px;
     margin: 0 0 14px 0;
     text-transform: none;

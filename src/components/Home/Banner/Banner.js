@@ -13,6 +13,7 @@ const Banner = () => {
                                     <h1>GateKnock Delivery Service</h1>
                                     <h2>On Demand Delivery
                                         at Your Doorstep</h2>
+                                    <p>Need to send something on an emergency basis? Parcel is what you need!</p>
                                 </div>
                             </div>
                         </div>

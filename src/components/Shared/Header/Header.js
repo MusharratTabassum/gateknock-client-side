@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../Hooks/useAuth';
 import "./Header.css"
+import image from "./logo.jpg"
 
 const Header = () => {
     const { user, logOut } = useAuth();
@@ -15,7 +16,10 @@ const Header = () => {
         <div>
             <Navbar expand="lg" sticky="top">
                 <Container className='mx-4' >
-                    <Navbar.Brand href="/" className='logos'><h1>GateKnock<span className="red">'</span></h1>
+                    <Navbar.Brand href="/" className='logos d-flex'>
+                        <img src={image} style={{ width: "80px" }} alt="" />
+
+                        <h1 className='mt-3'>GateKnock<span className="red">'</span></h1>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">

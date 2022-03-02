@@ -6,6 +6,7 @@ import Home from './components/Home/Home/Home';
 import Service from './components/Home/Service/Service';
 import Services from './components/Home/Services/Services';
 import Contact from './components/Contact/Contact';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path="/contact">
               <Contact></Contact>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
 
 
