@@ -8,10 +8,7 @@ import image from "./logo.jpg"
 
 const Header = () => {
     const { user, logOut } = useAuth();
-    const activeStyle = {
-        fontWeight: "bold",
-        color: "red"
-    }
+
     return (
         <div>
             <Navbar expand="lg" sticky="top">
@@ -28,7 +25,7 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link activeStyle={activeStyle} className='header-link' as={Link} to='/home'> <li>Home</li></Nav.Link>
+                            <Nav.Link className='header-link' as={Link} to='/home'> <li>Home</li></Nav.Link>
                             <Nav.Link className='header-link' as={HashLink} to="/home#services"><li>Services</li> </Nav.Link>
                             <Nav.Link className='header-link' as={Link} to='/contact' >Contact</Nav.Link>
 
@@ -41,8 +38,6 @@ const Header = () => {
                             {user?.email == 'admin123@gmail.com' ?
                                 <Nav.Link className='header-link' as={Link} to="/addservice">AddService</Nav.Link> : ''
                             }
-
-
                             {user?.email == 'admin123@gmail.com' ?
                                 <Nav.Link className='header-link' as={Link} to="/manageorder">ManageBooking</Nav.Link>
                                 : ''
@@ -50,13 +45,17 @@ const Header = () => {
                             {user?.email ?
                                 <Nav.Link className='header-link ' as={Link} to="/">Hello! {user.displayName}</Nav.Link> : ''
                             }
-                            {user?.email ?
-                                <Nav.Link className='header-link' >
+                            <Nav.Link>
+                                {user?.email ?
+
                                     <li><Button className='p-0 logout-btn ' onClick={logOut} variant="light">Logout</Button></li>
-                                </Nav.Link>
-                                :
-                                <Nav.Link className='header-link' as={Link} to="/login">Login</Nav.Link>
-                            }
+
+                                    :
+                                    <Nav.Link className='header-link' as={Link} to="/login">Login</Nav.Link>
+                                }
+
+                            </Nav.Link>
+
 
                         </Nav>
 

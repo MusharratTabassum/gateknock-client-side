@@ -6,6 +6,7 @@ initializeAuthentication();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
+
     const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -23,7 +24,8 @@ const useFirebase = () => {
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
-                setUser(user)
+
+                setUser(user);
             } else {
                 // User is signed out
                 setUser({})
@@ -47,12 +49,8 @@ const useFirebase = () => {
 
     const handleUserRegistration = (e) => {
         e.preventDefault();
-        if (password.length < 6) {
-            setError("password should be more than 6 characters");
-            return;
-        }
-        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-            setError('password must contain 2 upper case');
+        if (password.length < 5) {
+            setError("password should be more than 5 characters");
             return;
         }
         else {
@@ -66,7 +64,7 @@ const useFirebase = () => {
                 const user = result.user;
                 console.log(user);
                 setError('');
-                verifyEmail();
+
                 setUserName();
 
                 // ...
@@ -76,13 +74,7 @@ const useFirebase = () => {
             })
     }
 
-    const verifyEmail = () => {
-        sendEmailVerification(auth.currentUser)
-            .then(result => {
 
-            })
-        alert('An email has been sent.Check your email to verify.')
-    }
     const handleResetPassword = () => {
         sendPasswordResetEmail(auth, email)
             .then(() => {
@@ -121,16 +113,20 @@ const useFirebase = () => {
         }
     }
 
-    const loginProcess = (email, password) => {
+    const loginProcess = (email, password, location, history) => {
+        setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user;
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
                 console.log(user);
                 setError('');
             })
             .catch(error => {
                 setError(error.message);
             })
+            .finally(() => setIsLoading(false));
     }
 
 
@@ -154,7 +150,7 @@ const useFirebase = () => {
         handleNameChange,
         error,
         handleResetPassword,
-        handleUserLogin
+        handleUserLogin, loginProcess, email, password
 
     }
 

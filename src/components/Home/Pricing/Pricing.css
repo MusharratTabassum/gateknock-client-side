@@ -1,0 +1,22 @@
+.price-table .table-bordered {
+    border: 2px solid #e6e8eb;
+}
+.price-table .table {
+    margin-bottom: 40px;
+}
+.table-bordered {
+    border: 1px solid #dee2e6;
+}
+.thead .tr{
+    background-color: #dee2e6;
+}
+.price-condition ul li {
+    font-size: 16px;
+    color: #212b36;
+    line-height: 28px;
+}
+.section-title h2 {
+    font-size: 46px;
+    color: #000000;
+    line-height: 50px;
+}

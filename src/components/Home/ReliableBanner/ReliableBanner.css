@@ -1,0 +1,14 @@
+.relay p {
+    font-size: 20px;
+    color: #5d6467;
+    line-height: 30px;
+    margin-bottom: 0;
+   font-family: 'Roboto', sans-serif;
+}
+.relay h2 {
+    font-size: 34px;
+    color: #152934;
+    line-height: 42px;
+    margin-bottom: 30px;
+    font-family: 'UniNeueBold';
+}
