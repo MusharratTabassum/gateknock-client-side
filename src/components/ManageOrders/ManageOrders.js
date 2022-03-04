@@ -29,12 +29,12 @@ const ManageOrders = () => {
                 });
         }
         else {
-            alert("The booking is not removed.")
+            alert("The order is not removed.")
         }
     }
     return (
         <div>
-            <div className="bookings container ">
+            <div className="container ">
 
                 {
                     <div className="table-responsive mt-3 mb-5">
@@ -65,7 +65,7 @@ const ManageOrders = () => {
                                         >
                                             Remove
                                         </Button>
-                                        <Link to={`/bookings/update/${order._id}`}><button className='update-btn'>Update</button></Link>
+                                        <Link to={`/orders/updating/${order._id}`}><button className='update-btn'>Update</button></Link>
 
                                     </tr>
                                 </tbody>

@@ -1,3 +1,11 @@
 .dlt-btn{
-    background-color: red;
+    background-color: red !important;
+    border-radius: 5px;
+    color: white;
+}
+.update-btn{
+    background-color:black;
+    padding: 5px 16px;
+    border-radius: 5px;
+    color: white;
 }

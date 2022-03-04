@@ -7,7 +7,7 @@ import './Footer.css'
 const Footer = () => {
     return (
         <div>
-            <footer className='container-fluid ps-5 mt-5'>
+            <footer className='container-fluid ps-5'>
                 <div className='row  text-start'>
                     <div className="col-lg-3 col-md-6 ">
                         <ul><h4 style={{ fontWeight: '600' }}>ADDRESS</h4></ul>

@@ -66,7 +66,7 @@ const MyOrders = () => {
                                     <td>{order.service_name}</td>
                                     <td>{order.Dropping_Date}</td>
                                     <td>{order.status}</td>
-                                    <button className='delete-btn' onClick={() => handleDeleteOrder(order._id)}>Cancel</button>
+                                    <button className='dlt-btn' onClick={() => handleDeleteOrder(order._id)}>Cancel</button>
                                 </tr>
                             </tbody>
                         ))}
