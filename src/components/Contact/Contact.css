@@ -1,0 +1,96 @@
+.contact-background{
+ 
+    background: url('./contact.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-bottom: 6%;    
+
+}
+.form-styles{
+flex-direction: column;
+border: 1px solid black;
+align-items: center;
+margin: auto;
+
+box-shadow: 100px;
+padding: 45px 10px;
+}
+.form-styles textarea{
+min-height: 150px;
+}
+.info{
+background-color: rgba(0, 0, 0, 0.3);
+border: 1px solid black;
+box-shadow: 100px;
+width: 80%;
+height: 28%;
+padding: 30px;
+margin: 20px;
+}
+.icon{
+color:  #f1e14b;
+font-size:45px;
+padding: 2px;
+}
+.icon-info{
+padding-left: 5%;
+}
+.white{
+color: white;
+}
+.red{
+color:red ;
+
+}
+.contact form input{
+    width: 38%;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 10px;
+   
+}
+.contact  textarea{
+    width: 78%;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    padding: 5px;
+}
+input[submit]{
+    background-color:  red;
+  }
+  .contactform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.coffee{
+    color: red;
+    font-size:xx-large;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+.card-body p{
+    text-align: center;
+    line-height: 160%;
+}
+.card-body p:hover{
+    color: red;
+    cursor: pointer;
+}
+.contact-info-area{
+    margin-top: 100px;
+    margin-bottom: 120px;
+   
+}
+.contact-info{
+    box-shadow: -1px 6px 49px 6px rgba(205, 226, 230, 0.521);
+    -webkit-box-shadow: -1px 6px 49px 6px rgba(188, 219, 224, 0.521);
+    -moz-box-shadow: -1px 6px 49px 6px rgba(216, 228, 230, 0.521);
+
+}
+.first-height{
+    padding-bottom: 40px;
+}

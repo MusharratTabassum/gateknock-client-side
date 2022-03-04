@@ -12,7 +12,7 @@ const Service = ({ service }) => {
                         <img src={service_img} className="card-img-top img-fluid" alt="..." />
                         <div className="card-body text-start">
                             <h5 className="card-title fw-bold">{service_name}</h5>
-                            <p className="card-text">{service_des.slice(0, 70)}...</p>
+                            <p className="card-text text-start ">{service_des.slice(0, 70)}...</p>
                         </div>
 
                         <div class="card-footer ">

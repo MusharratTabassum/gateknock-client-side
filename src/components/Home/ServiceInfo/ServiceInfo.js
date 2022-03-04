@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import AOS from 'aos';
 import axios from 'axios';
+import Pricing from '../Pricing/Pricing';
+import "./ServiceInfo.css"
 
 
 const ServiceInfo = () => {
@@ -16,7 +18,7 @@ const ServiceInfo = () => {
     const { register, handleSubmit, reset } = useForm();
 
     useEffect(() => {
-        fetch("https://murmuring-beyond-96223.herokuapp.com/services")
+        fetch("http://localhost:5000/services")
             .then((res) => res.json())
             .then((data) => setServiceDetail(data));
     }, []);
@@ -34,7 +36,7 @@ const ServiceInfo = () => {
 
 
     const onSubmit = data => {
-        axios.post('https://murmuring-beyond-96223.herokuapp.com/bookings', data)
+        axios.post('http://localhost:5000/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Thanks! We will contact with you soon.');
@@ -50,48 +52,41 @@ const ServiceInfo = () => {
             <div className='container '>
                 <div className='serviceDetail '>
                     <div className='row'>
-                        <div className="col-12 col-lg-6" data-aos="flip-left" >
-                            <img className='img-fluid img-size  mb-4' src={chosenData?.image} alt="" />
+                        <div className="col-12 col-lg-12" data-aos="flip-left" >
+                            <img className='img-fluid mb-4' style={{ width: "350px" }} src={chosenData?.service_img} alt="" />
                         </div >
-                        <div className="col-12 col-lg-6 notice text-start p-4" data-aos="flip-right">
-                            <h2 className=" mb-3">{chosenData?.title}</h2>
-                            <p className='white'>{chosenData?.short_description}</p>
-                            <h6 className='mt-4 white mb-2'>Duration : {chosenData?.duration}</h6>
-                            <h6 className='white'>{chosenData?.price}tk/Person</h6>
-                            <p className='white'>Price : {chosenData?.package_brief}</p>
+                        <div className="col-12 col-lg-12 notice text-start p-4" >
+                            <h1 className=" mb-3">{chosenData?.service_name} Delivery</h1>
+                            <p className='black'>{chosenData?.service_des}</p>
                         </div>
+                        <Pricing></Pricing>
                     </div>
                 </div>
             </div>
-            <h1>What's Next??</h1>
-            {/**Service && Booking part */}
+            <h1 className="mt-4" >Want to take the service?</h1>
+
             <div className="ms-2 me-3 mb-5">
                 <div className=' mt-5' >
                     <div className=' row mt-5'>
-                        <div className='notice col-lg-6 text-start' >
-                            <h2 className="mb-5">Notice</h2>
-                            <p className="mt-5"># We have NO HIDDEN COST / CHARGE</p>
-                            <p># All price subject to availability</p>
-                            <p># All package for 2 person minimum</p>
-                            <p># Any date available. (Please mention journey dates to check)</p>
-                            <p># Price may increase during the blackout period ( Religious or national holidays, conference or fairs, world events )</p>
-                            <p># Custom package available </p>
-                        </div>
-                        <div className="form-side col-lg-6 p-4 me-0 " >
-
+                        <div className="form-side col-lg-12 p-4 me-0 " >
                             <div className='booking-detail'>
-                                <h2 className="mb-3">Book The Tour</h2>
-                                <form onSubmit={handleSubmit(onSubmit)}>
-                                    <input type="text"  {...register("title", { required: true })} placeholder="Booked Package" defaultValue={chosenData?.title} />
-                                    <input type="text" {...register("name", { required: true, maxLength: 20 })} placeholder="Name" defaultValue={user.displayName} />
-                                    <input type="email" {...register("email", { required: true })} placeholder="Email" defaultValue={user.email} />
-                                    <input type="text" {...register("status", { required: true })} defaultValue="pending" />
-                                    <input type="number" {...register("phone", { required: true })} placeholder="01*******" />
-                                    <input type="number" {...register("person-no", { required: true })} placeholder="No. of person to go" />
-                                    <input type="text" {...register("address", { required: true })} placeholder="Address" />
-                                    <input type="date" {...register("Date")} placeholder="Date" />
-                                    <input className='booking-btn' type="submit" value="Book" />
-                                </form></div>
+                                <div className="add-service">
+                                    <form onSubmit={handleSubmit(onSubmit)}>
+                                        <input type="text" {...register("name", { required: true, maxLength: 20 })} placeholder="Name" defaultValue={user.displayName} />
+                                        <input type="text" {...register("email", { required: true, maxLength: 20 })} placeholder="Name" defaultValue={user.email} />
+                                        <input type="text" {...register("status", { required: true })} className='input-boxes' defaultValue="pending" />
+                                        <input {...register("service_name", { required: true, maxLength: 20 })} placeholder="service name" />
+                                        <input type="text" {...register("picking_address")} placeholder="picking address" />
+                                        <input type="text" {...register("droping_address")} placeholder="droping address" />
+                                        <input type="date" {...register("Picking_Date")
+                                        } placeholder="Date" />
+                                        <input type="time" {...register("Time")} placeholder="Time to pick" />
+                                        <input type="date" {...register("Dropping_Date")} placeholder="Date" />
+                                        <input className='add-btn' type="submit" />
+                                    </form>
+                                </div>
+
+                            </div>
 
                         </div>
                     </div>

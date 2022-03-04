@@ -30,31 +30,32 @@ const Header = () => {
                             <Nav.Link className='header-link' as={Link} to='/contact' >Contact</Nav.Link>
 
                             {user?.email ?
-                                <Nav.Link className='header-link' as={Link} to="/bookings">MyOrders</Nav.Link> : ''
+                                <Nav.Link className='header-link' as={Link} to="/myorders">MyOrders</Nav.Link> : ''
                             }
                             {user?.email ?
-                                <Nav.Link className='header-link' as={Link} to="/allorders">AllBooking</Nav.Link> : ''
+                                <Nav.Link className='header-link' as={Link} to="/allorders">AllOrders</Nav.Link> : ''
                             }
-                            {user?.email == 'admin123@gmail.com' ?
+                            {user?.email == 'myadmin123@gmail.com' ?
                                 <Nav.Link className='header-link' as={Link} to="/addservice">AddService</Nav.Link> : ''
                             }
-                            {user?.email == 'admin123@gmail.com' ?
-                                <Nav.Link className='header-link' as={Link} to="/manageorder">ManageBooking</Nav.Link>
+                            {user?.email == 'myadmin123@gmail.com' ?
+                                <Nav.Link className='header-link' as={Link} to="/manageorders">ManageOrders</Nav.Link>
                                 : ''
                             }
                             {user?.email ?
                                 <Nav.Link className='header-link ' as={Link} to="/">Hello! {user.displayName}</Nav.Link> : ''
                             }
-                            <Nav.Link>
-                                {user?.email ?
 
+                            {user?.email ?
+                                <Nav.Link>
                                     <li><Button className='p-0 logout-btn ' onClick={logOut} variant="light">Logout</Button></li>
+                                </Nav.Link>
 
-                                    :
-                                    <Nav.Link className='header-link' as={Link} to="/login">Login</Nav.Link>
-                                }
+                                :
+                                <Nav.Link className='header-link' as={Link} to="/login">Login</Nav.Link>
+                            }
 
-                            </Nav.Link>
+
 
 
                         </Nav>

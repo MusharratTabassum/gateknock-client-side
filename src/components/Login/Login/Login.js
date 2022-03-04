@@ -48,7 +48,7 @@ const Login = () => {
                             <br />
                             <button className='reset mt-5' onClick={handleResetPassword}>Forget your password?</button>
 
-                            <h6 className='color mt-2'>Don't have an account?<Link className='reset' to="/registration">Register here</Link></h6>
+                            <h6 className='color mt-2'>Don't have an account?<Link className='reset' to="/register">Register here</Link></h6>
 
                         </form>
                     </div>
